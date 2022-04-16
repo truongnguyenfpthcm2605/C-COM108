@@ -1,0 +1,43 @@
+# Project: com108_ps24083_truongnv_LAB6
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = main_Lab6.o BAI1_lab6.o Nhap_Xuat_mang1chieu.o BAI2_lab6.o BAI3_LAB6.o BAI4_lab6.o
+LINKOBJ  = main_Lab6.o BAI1_lab6.o Nhap_Xuat_mang1chieu.o BAI2_lab6.o BAI3_LAB6.o BAI4_lab6.o
+LIBS     = -L"D:/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib32" -static-libgcc -m32 -pg
+INCS     = -I"D:/Dev-Cpp/MinGW64/include" -I"D:/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"D:/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"D:/Dev-Cpp/MinGW64/include" -I"D:/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"D:/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"D:/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = com108_ps24083_truongnv_LAB6.exe
+CXXFLAGS = $(CXXINCS) -m32 -pg
+CFLAGS   = $(INCS) -m32 -pg
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+main_Lab6.o: main_Lab6.cpp
+	$(CPP) -c main_Lab6.cpp -o main_Lab6.o $(CXXFLAGS)
+
+BAI1_lab6.o: BAI1_lab6.cpp
+	$(CPP) -c BAI1_lab6.cpp -o BAI1_lab6.o $(CXXFLAGS)
+
+Nhap_Xuat_mang1chieu.o: Nhap_Xuat_mang1chieu.cpp
+	$(CPP) -c Nhap_Xuat_mang1chieu.cpp -o Nhap_Xuat_mang1chieu.o $(CXXFLAGS)
+
+BAI2_lab6.o: BAI2_lab6.cpp
+	$(CPP) -c BAI2_lab6.cpp -o BAI2_lab6.o $(CXXFLAGS)
+
+BAI3_LAB6.o: BAI3_LAB6.cpp
+	$(CPP) -c BAI3_LAB6.cpp -o BAI3_LAB6.o $(CXXFLAGS)
+
+BAI4_lab6.o: BAI4_lab6.cpp
+	$(CPP) -c BAI4_lab6.cpp -o BAI4_lab6.o $(CXXFLAGS)
